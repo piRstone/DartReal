@@ -5,6 +5,7 @@ angular.module('dartreal', ['components'])
 	$scope.type = null;
 	$scope.status = 0; // 0 : partie non commencée, 1 : partie en cours, 2 : partie terminée
 	$scope.winner = null;
+	var order = 0;
 
 	/**
 	 * Choix du type de jeu
@@ -53,9 +54,11 @@ angular.module('dartreal', ['components'])
 	 * @params {Object} - Joueur
 	 */
 	$scope.setWinner = function(winner) {
-		console.log('called', winner);
-		$scope.winner = winner;
-		$scope.status = 2;
+		order++;
+		if ($scope.winner == null) {
+			$scope.winner = winner;
+		}
+		winner.order = order;
 	}
 
 	/**

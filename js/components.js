@@ -56,11 +56,11 @@ angular.module('components', [])
 		},
 		template:
 		'<div>' +
-			'<p>{{ player.name }}</p> <span>score : </span><p ng-class="{changed: success == true}">{{ player.score }}</p>' +
+			'<p class="order" ng-class="{trophy: player.order == 1}" ng-show="player.order != undefined">{{ player.order }}<span ng-show="player.order == 1">er</span><span ng-show="player.order != 1">ème</span></p><p>{{ player.name }}</p> <span>score : </span><p ng-class="{changed: success == true}">{{ player.score }}</p>' +
 			'<a class="remove" ng-show="status == 0" ng-click="removePlayer()">&times;</a>' +
 			'<div class="score-form">' +
 				'<form name="scoreForm" ng-submit="updateScore(player.id, score, $event)">' +
-					'<input type="number" title="Score à soustraire" ng-model="score" ng-change="clearError()" ng-disabled="status == 0 || status == 2" required/><button type="submit" ng-disabled="status == 0 || status == 2">MAJ</button>' +
+					'<input type="text" title="Score à soustraire" ng-model="score" ng-change="clearError()" ng-disabled="status == 0 || status == 2" required/><button type="submit" ng-disabled="status == 0 || status == 2">MAJ</button>' +
 					'<p class="error" ng-show="error == true">Votre score ne peut pas être négatif !</p>' +
 				'</form>' +
 			'</div>' +

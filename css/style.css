@@ -38,7 +38,7 @@ input:disabled {
 }
 
 /* Cache le liseret rouge de l'input sur firefox */
-input.ng-invalid-required { 
+input.ng-invalid-required {
 	box-shadow: none;
 }
 
@@ -181,4 +181,33 @@ h3 {
 
 .players .remove:hover {
 	color: #000;
+}
+
+.player-line {
+	position: relative;
+}
+
+.order {
+	position: absolute;
+	top: 0;
+	left: -45px;
+	font-weight: bold;
+}
+
+.order span {
+	vertical-align: super;
+}
+
+.order.trophy:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: -160%;
+	transform: translateY(-50%);
+	height: 25px;
+	width: 25px;
+	background-image: url('../img/trophy.jpg');
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }

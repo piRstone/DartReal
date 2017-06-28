@@ -20,9 +20,9 @@
 				<h2>Le "{{ type }}"</h2>
 				<h4 ng-show="status == 0">Ajoutez vos joueurs</h4>
 				<div class="players" ng-repeat="player in players" player="player">
-					<player class="players" 
-							player="player" 
-							on-win="setWinner(winner)" 
+					<player class="players player-line"
+							player="player"
+							on-win="setWinner(winner)"
 							on-remove="removePlayer(player)"
 							status="status"></player>
 				</div>
@@ -32,7 +32,7 @@
 					</form>
 					<button class="play" ng-click="play()">Jouer !</button>
 				</div>
-				<div ng-show="status == 2">
+				<div ng-show="winner != null">
 					<h3>{{ winner.name }} a gagné !</h3>
 					<button ng-click="init()">Rejouer</button>
 				</div>
