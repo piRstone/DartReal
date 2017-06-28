@@ -69,5 +69,6 @@ angular.module('dartreal', ['components'])
 		$scope.type = null;
 		$scope.status = 0;
 		$scope.winner = null;
+		order = 0;
 	}
 })
